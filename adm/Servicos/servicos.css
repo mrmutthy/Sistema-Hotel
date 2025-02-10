@@ -1,0 +1,134 @@
+/* servicos.css */
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; 
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+section {
+    width: 80%;
+    max-width: 800px; 
+    margin: 20px auto; 
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+h2 {
+    color: #007bff; 
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column; 
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+#servicos-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px; 
+}.servico-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}.servico-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}.servico-item h3 {
+    color: #007bff;
+    margin-top: 0;
+}.servico-item p {
+    margin-bottom: 0;
+}
+
+.excluir-servico {
+    background-color: #dc3545; 
+    color: #fff;
+    padding: 8px 12px; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.excluir-servico:hover {
+    background-color: #c12a36; 
+}
+
+.servico-item img {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 10px; 
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+input[type="file"] {
+    display: none; 
+}
+
+label[for="imagem-servico"] {
+    background-color: #007bff; 
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: inline-block; 
+    text-align: center;
+}
+
+label[for="imagem-servico"]:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 600px) {
+    section {
+        width: 90%;
+    }
+
+    #servicos-container {
+        grid-template-columns: 1fr;
+    }
+}

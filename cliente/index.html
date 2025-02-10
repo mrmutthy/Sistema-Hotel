@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOTEL</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>HOTEL</h1>
+        <nav>
+            <a href="#">Fotos</a>
+            <a href="Serviços/servicos.html">Serviços</a>
+            <a href="Quartos/quartos.html">Quartos</a>
+            <a href="Reservas/reserva.html">Reservas</a>
+            <a href="#">Localização</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="fotos">
+            <h2>Fotos do Hotel</h2>
+            <div class="galeria">
+                <img src="imagens/hotel.jpeg" alt="Foto 1">
+                <img src="imagens/quarto1.jpeg" alt="Foto 2">
+                </div>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços</h2>
+            <div id="servicos-container"></div>
+        </section>
+
+        <section id="quartos">
+            <h2>Tipos de Quartos</h2>
+            <div class="quarto">
+                <h3>Suíte Master</h3>
+                <p>Descrição da suíte</p>
+            </div>
+        </section>
+
+        <section id="reservas">
+            <h2>Faça sua Reserva</h2>
+            <form id="formulario-reserva">
+                <label for="data-entrada">Data de Entrada:</label>
+                <input type="date" id="data-entrada" name="data-entrada"><br>
+                <label for="data-saida">Data de Saída:</label>
+                <input type="date" id="data-saida" name="data-saida"><br>
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!..." width="600" height="450" frameborder="0" style="border:0" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Nome do Hotel</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

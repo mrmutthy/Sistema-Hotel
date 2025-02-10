@@ -1,0 +1,45 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Cor de fundo suave */
+    color: #333; /* Cor do texto principal */
+}
+
+#servicos {
+    padding: 20px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+#servicos h2 {
+    color: #007bff; /* Cor do título */
+    margin-bottom: 20px;
+}
+
+#servicos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo */
+    grid-gap: 20px;
+}.servico {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: left; /* Alinha o texto à esquerda */
+}.servico h3 {
+    color: #007bff; /* Cor do título do serviço */
+    margin-bottom: 10px;
+}.servico p {
+    margin-bottom: 15px;
+}.excluir-servico {
+    background-color: #dc3545; /* Cor do botão de exclusão */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave na cor */
+}.excluir-servico:hover {
+    background-color: #c12a36; /* Cor do botão de exclusão ao passar o mouse */
+}

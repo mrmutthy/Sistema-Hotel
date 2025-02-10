@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HOTEL</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <h1>HOTEL ADM</h1>
+        <nav>
+            <a href="#">Fotos</a>
+            <a href="Servicos/servicos.html">Serviços</a>
+            <a href="Quartos/quartos.html">Quartos</a>
+            <a href="Reservas/reserva.html">Reservas</a>
+            <a href="#">Localização</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="fotos">
+            <h2>Fotos do Hotel</h2>
+            <div class="galeria">
+                <img src="imagens/hotel.jpeg" alt="Foto 1">
+                <img src="imagens/quarto1.jpeg" alt="Foto 2">
+            </div>
+        </section>
+
+        <section id="servicos">
+            <h2>Serviços Oferecidos</h2>
+            <div id="servicos-container"></div>
+        </section>
+
+        <section id="quartos">
+            <h2>Tipos de Quartos</h2>
+            <div class="quarto">
+                <h3>Suíte Master</h3>
+                <p>Descrição da suíte</p>
+            </div>
+        </section>
+
+        <section id="reservas">
+            <h2>Faça sua Reserva</h2>
+            <form id="formulario-reserva">
+                <label for="data-entrada">Data de Entrada:</label>
+                <input type="date" id="data-entrada" name="data-entrada"><br>
+                <label for="data-saida">Data de Saída:</label>
+                <input type="date" id="data-saida" name="data-saida"><br>
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+
+        <section id="localizacao">
+            <h2>Localização</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d459950.53687785385!2d-53.37683168809776!3d-25.758552166319042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f048f00dd26185%3A0x3965e767d865130a!2sUTFPR%20-%20Dois%20Vizinhos!5e0!3m2!1spt-BR!2sbr!4v1739149560782!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hotel Fazenda</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
