@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Quartos</title>
+    <link rel="stylesheet" href="quartos.css">
+</head>
+<body>
+    <div id="admin-quartos">
+        <h2>Gerenciar Quartos</h2>
+
+        <form id="form-quarto">
+            <input type="text" id="nome-quarto" placeholder="Nome do Quarto">
+            <textarea id="descricao-quarto" placeholder="Descrição do Quarto"></textarea>
+            <input type="number" id="preco-quarto" placeholder="Preço do Quarto">
+            <label for="imagem-quarto">Escolha a Imagem</label>
+            <input type="file" id="imagem-quarto" accept="image/*">
+            
+
+            <button type="submit">Adicionar Quarto</button>
+        </form>
+
+        <div id="lista-quartos">
+            </div>
+    </div>
+
+    <script src="quartos.js"></script>
+</body>
+</html>
