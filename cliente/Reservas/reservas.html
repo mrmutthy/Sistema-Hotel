@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="reservas.css">
+</head>
+<body>
+    <h1>Reservar Quarto</h1>
+
+    <div id="info-quarto">
+        <h2>Quarto: <span id="nome-quarto"></span></h2>
+        <p>Preço: R$ <span id="preco-quarto"></span></p>
+        </div>
+
+    <form id="form-reserva">
+        <label for="nome-cliente">Nome do Cliente:</label><br>
+        <input type="text" id="nome-cliente" name="nome-cliente" required><br><br>
+
+        <label for="data-entrada">Data de Entrada:</label><br>
+        <input type="date" id="data-entrada" name="data-entrada" required><br><br>
+
+        <label for="data-saida">Data de Saída:</label><br>
+        <input type="date" id="data-saida" name="data-saida" required><br><br>
+
+        <button type="submit">Reservar</button>
+    </form>
+
+<script src="reservas.js"></script>
+</body>
+</html>

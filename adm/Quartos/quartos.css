@@ -1,0 +1,102 @@
+body {
+    font-family: 'Arial', sans-serif; /* Fonte mais moderna */
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#admin-quartos {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 960px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #007bff; /* Cor azul para o título */
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form input,
+form textarea,
+form select {
+    margin-bottom: 10px;
+    padding: 8px; /* Aumenta o padding */
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Bordas arredondadas */
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave no hover */
+    margin-bottom: 20px;
+}
+
+form button:hover {
+    background-color: #0056b3; /* Cor mais escura no hover */
+}
+
+#lista-quartos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    height: 80vh; /* Define uma altura para o contêiner pai */
+}
+.quarto-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.quarto-item:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+}
+
+
+.quarto-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Bordas arredondadas na imagem */
+    margin-bottom: 10px;
+}
+
+.quarto-item h3 {
+    color: #007bff; /* Cor azul para o título */
+    margin-bottom: 10px;
+}
+
+.quarto-item p {
+    margin-bottom: 10px;
+}
+
+.quarto-item button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Empurra o botão para baixo */
+    align-self: flex-start /* Alinha o botão à direita */
+}
+
+.quarto-item button:hover {
+    background-color: #c12a36; 
+
+}
