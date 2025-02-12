@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #007bff;
+    background-color: #8b4513;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -45,7 +45,7 @@ section {
 
 .btn-agendar {
     display: flex;
-    background-color: #007bff;
+    background-color: #8b4513;
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -59,7 +59,7 @@ section {
 }
 
 .btn-agendar:hover {
-    background-color: #0056b3;
+    background-color:  #582c0c;
 }
 
 .quarto img {
@@ -70,7 +70,7 @@ section {
 }
 
 .quarto h3 {
-    color: #007bff; /* Cor azul para o título */
+    color: #8b4513; 
     margin-bottom: 10px;
 }
 

@@ -1,63 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>HOTEL</title>
+    <title>Hotel Fazenda</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <header>
-        <h1>HOTEL</h1>
+        <img id="icone" src="../imagens/icone.avif" alt="">
+        <h1>Hotel Fazenda</h1>
         <nav>
-            <a href="#">Fotos</a>
+            <a href="Fotos/fotos.html">Fotos</a>
             <a href="Serviços/servicos.html">Serviços</a>
-            <a href="Quartos/quartos.html">Quartos</a>
+            <a href="Quartos/quartos.html">Acomodações</a>
             <a href="Reservas/reserva.html">Reservas</a>
-            <a href="#">Localização</a>
+            <a id="link-localizacao" href="">Localização</a>
         </nav>
     </header>
 
     <main>
+        <section id="banner">
+            <h2>Desfrute da Tranquilidade e Beleza da Natureza</h2>
+            <p>Uma experiência única em meio ao verde, com conforto e lazer para toda a família.</p>
+            <a href="Reservas/reserva.html" class="botao-banner">Reserve Agora</a>
+        </section>
+
         <section id="fotos">
-            <h2>Fotos do Hotel</h2>
+            <h2>Galeria de Fotos</h2>
             <div class="galeria">
-                <img src="imagens/hotel.jpeg" alt="Foto 1">
-                <img src="imagens/quarto1.jpeg" alt="Foto 2">
+                <img src="../imagens/fazenda1.jpeg" alt="Foto da Fazenda">
+                <img src="../imagens/fazenda2.jpeg" alt="Foto do Quarto">
+                <img src="../imagens/fazenda3.jpeg" alt="Foto da Piscina">
                 </div>
         </section>
 
         <section id="servicos">
-            <h2>Serviços</h2>
-            <div id="servicos-container"></div>
+            <h2>Serviços e Lazer</h2>
+            <div id="servicos-container">
+            </div>
         </section>
 
         <section id="quartos">
-            <h2>Tipos de Quartos</h2>
-            <div class="quarto">
-                <h3>Suíte Master</h3>
-                <p>Descrição da suíte</p>
+            <h2>Acomodações Rústicas e Confortáveis</h2>
+            <div id="lista-quartos">
             </div>
         </section>
 
         <section id="reservas">
             <h2>Faça sua Reserva</h2>
-            <form id="formulario-reserva">
-                <label for="data-entrada">Data de Entrada:</label>
-                <input type="date" id="data-entrada" name="data-entrada"><br>
-                <label for="data-saida">Data de Saída:</label>
-                <input type="date" id="data-saida" name="data-saida"><br>
-                <button type="submit">Reservar</button>
-            </form>
+                <a class="botao-banner" href="Reservas/reserva.html">Clique Aqui</a>
         </section>
 
         <section id="localizacao">
-            <h2>Localização</h2>
-            <iframe src="https://www.google.com/maps/embed?pb=!..." width="600" height="450" frameborder="0" style="border:0" loading="lazy"></iframe>
+            <h2>Localização e Contato</h2>
+            <p>Estr. p/ Boa Esperança, km 04 - Dois Vizinhos, PR</p>
+            <p>Telefone: (26) 99856-2598</p>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d33666.657044333355!2d-53.11317972511406!3d-25.705752215993645!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f048f00dd26185%3A0x3965e767d865130a!2sUTFPR%20-%20Dois%20Vizinhos!5e0!3m2!1spt-BR!2sbr!4v1739365099336!5m2!1spt-BR!2sbr"
+             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 Nome do Hotel</p>
+        <p>&copy; 2025 Hotel Fazenda</p>
     </footer>
 
     <script src="script.js"></script>
