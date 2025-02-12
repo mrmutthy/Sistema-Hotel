@@ -15,28 +15,10 @@ function exibirServicos(container) {
     });
 }
 
-function removerServico(index) {
-    let servicos = JSON.parse(localStorage.getItem('servicos')) || [];
-    servicos.splice(index, 1);
-    localStorage.setItem('servicos', JSON.stringify(servicos));
-
-    const servicosContainer = document.getElementById('servicos-container');
-    if (servicosContainer) {
-        exibirServicos(servicosContainer); // Correct call: pass the element itself
-    }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const servicosContainer = document.getElementById('servicos-container');
-
-    if (servicosContainer) {
+    
         exibirServicos(servicosContainer);
 
-        servicosContainer.addEventListener('click', (event) => {
-            if (event.target.classList.contains('excluir-servico')) {
-                const index = event.target.dataset.index;
-                removerServico(index);
-            }
-        });
-    }
 });
