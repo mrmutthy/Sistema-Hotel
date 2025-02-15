@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('servicos', JSON.stringify(servicos));
 
         exibirServicos(document.getElementById('servicos-container'))
-        alert('Serviço salvo com sucesso!');
         formServico.reset();
     }
 
