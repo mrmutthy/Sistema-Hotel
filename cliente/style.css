@@ -169,12 +169,6 @@ section {
     text-align: start;
 }
 
-footer {
-    background-color: #8b4513;
-    color: white;
-    text-align: center;
-    padding: 5px;
-}
 
 .galeria {
     display: flex;
@@ -192,7 +186,7 @@ footer {
 #localizacao {
     width: 100%; 
     position: relative; 
-    padding-bottom: 50%; 
+    padding-bottom: 35%; 
     height: 0; 
     overflow: hidden; 
     

@@ -1,45 +1,127 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4; /* Cor de fundo suave */
-    color: #333; /* Cor do texto principal */
+    background-color: #f8f8f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 960px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
 }
 
 #servicos {
-    padding: 20px;
-    text-align: center; /* Centraliza o conteúdo */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #servicos h2 {
-    color: #8b4513; /* Cor do título */
-    margin-bottom: 20px;
+    color: #8b4513;
+    margin-bottom: 30px;
+    font-size: 2em;
+    width: 100%;
 }
 
 #servicos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo */
-    grid-gap: 20px;
-}.servico {
-    border: 1px solid #ddd;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: left; /* Alinha o texto à esquerda */
-}.servico h3 {
-    color: #007bff; /* Cor do título do serviço */
-    margin-bottom: 10px;
-}.servico p {
-    margin-bottom: 15px;
-}.excluir-servico {
-    background-color: #dc3545; /* Cor do botão de exclusão */
-    color: white;
-    padding: 8px 16px;
+    display: flex; /* Flexbox */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.servico {
     border: none;
-    border-radius: 4px;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; REMOVE THIS */ /* Remove a altura fixa */
+    flex: 1 0 350px;       /* Mantém a largura mínima e permite crescer */
+    align-items: stretch; /* Stretch items to fill container height */
+}
+
+.servico:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.servico img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+}
+
+.servico h3 {
+    color: #8b4513;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.servico p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+    flex-grow: 1;
+}
+
+.servico button,
+.servico a {
+    background-color: #8b4513;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transição suave na cor */
-}.excluir-servico:hover {
-    background-color: #c12a36; /* Cor do botão de exclusão ao passar o mouse */
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    margin-top: auto;
+}
+
+.servico button:hover,
+.servico a:hover {
+    background-color: #70380c;
+}
+
+@media (max-width: 600px) {
+    #servicos {
+        width: 85%;
+        margin: 10px; 
+    }
+
+    #servicos-container {
+        flex-direction: column; 
+        align-items: center; 
+        width: 80%;
+    }
+
+    .servico {
+        width: 80%;
+        height: auto;
+    }
+
 }

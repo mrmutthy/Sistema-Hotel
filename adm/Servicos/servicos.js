@@ -10,7 +10,7 @@ function exibirServicos(container) {
             <h3>${servico.nome}</h3>
             <p>${servico.descricao}</p>
             ${servico.imagem ? `<img src="${servico.imagem}" alt="Imagem do serviço" width="100">` : ''} 
-            <button class="excluir-servico" data-index="${index}">Excluir</button>
+            <button class="excluir-servico" data-index="${index}">Remover</button>
         `;
         container.appendChild(divServico);
     });

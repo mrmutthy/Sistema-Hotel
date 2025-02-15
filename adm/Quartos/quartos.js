@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('quartos', JSON.stringify(quartos));
     
         formQuarto.reset();
-        exibirQuartos(); // Atualiza a lista de quartos no painel admin após adicionar um novo quarto
+        exibirQuartos(); 
     }
 
     function exibirQuartos() {

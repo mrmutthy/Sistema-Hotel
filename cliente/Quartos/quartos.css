@@ -1,8 +1,11 @@
 body {
-    font-family: 'Arial', sans-serif; 
+    font-family: 'Arial', sans-serif;
     margin: 0;
     background-color: #f8f8f8;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -22,29 +25,61 @@ section {
     max-width: 960px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 #quartos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+    width: 960px; 
+    margin: 20px auto; 
+}
+
+#lista-quartos {
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
     gap: 20px;
+    width: 100%; 
 }
 
 .quarto {
     border: 1px solid #ddd;
-    padding: 20px; /* Aumenta o padding */
-    border-radius: 8px; /* Bordas arredondadas */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    transition: transform 0.2s ease; /* Transição suave no hover */
-    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+    flex: 1 0 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
+#quartos h2 { 
+    color: #8b4513;
+    width: 100%; 
+    text-align: center;
+    margin-bottom: 20px; 
+}
+
+.quarto img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
 .quarto:hover {
-    transform: translateY(-5px); /* Efeito de elevação no hover */
+    transform: translateY(-5px);
 }
 
 .btn-agendar {
-    display: flex;
     background-color: #8b4513;
     color: #fff;
     padding: 10px 15px;
@@ -53,25 +88,12 @@ section {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    margin-top: 20px; /* Adiciona espaço acima do botão */
-    width: 60px; 
-    justify-self: flex-end;
+    margin-top: 20px;
+    align-self: flex-end;
 }
 
 .btn-agendar:hover {
-    background-color:  #582c0c;
-}
-
-.quarto img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px; /* Bordas arredondadas na imagem */
-    margin-bottom: 10px;
-}
-
-.quarto h3 {
-    color: #8b4513; 
-    margin-bottom: 10px;
+    background-color: #582c0c;
 }
 
 .quarto p {
@@ -79,6 +101,33 @@ section {
 }
 
 .quarto ul {
-    list-style: disc; /* Estilo de lista com marcadores */
+    list-style: disc;
     padding-left: 20px;
+}
+
+@media (max-width: 768px) {
+
+    #quartos {
+        width: 90%; 
+    }
+
+    #lista-quartos {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .quarto {
+        width: 90%;
+        height: auto;
+        margin-bottom: 20px;
+
+    }
+
+    #quartos {
+        padding: 0 10px; 
+    }
+
+    .quarto img {
+        max-height: 150px; /* Altura máxima menor em telas menores */
+    }
 }
