@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formQuarto = document.getElementById('form-quarto');
     const listaQuartos = document.getElementById('lista-quartos');
+    const telaEdicao = document.getElementById('tela-edicao');
+    const formEdicao = document.getElementById('form-edicao');
+    const cancelarEdicao = document.getElementById('cancelar-edicao');
+    let indexQuartoEditando = null;
 
     exibirQuartos();
 
-    formQuarto.addEventListener('submit', (event) => {
+    formQuarto.addEventListener('submit', adicionarQuarto);
+
+    function adicionarQuarto(event) {
         event.preventDefault();
 
         const nome = document.getElementById('nome-quarto').value;
@@ -18,27 +24,37 @@ document.addEventListener('DOMContentLoaded', () => {
             const reader = new FileReader();
             reader.onload = (e) => {
                 imagemBase64 = e.target.result;
-                adicionarQuarto(nome, descricao, preco, imagemBase64);
+                salvarQuarto(nome, descricao, preco, imagemBase64);
             }
             reader.readAsDataURL(imagemArquivo);
         } else {
-            adicionarQuarto(nome, descricao, preco, imagemBase64);
+            salvarQuarto(nome, descricao, preco, imagemBase64);
         }
-    });
+    }
 
-    function adicionarQuarto(nome, descricao, preco, imagem, comodidades) {
+    function salvarQuarto(nome, descricao, preco, imagem) {
         const quartos = JSON.parse(localStorage.getItem('quartos')) || [];
-        const novoQuarto = {
-            nome,
-            descricao,
-            preco,
-            imagem
-        };
-        quartos.push(novoQuarto);
+
+        if (indexQuartoEditando !== null) {
+           
+            const quartoEditado = quartos[indexQuartoEditando];
+            const imagemExistente = quartoEditado.imagem;
+
+            if (!imagem) {
+                imagem = imagemExistente;
+            }
+
+            quartos[indexQuartoEditando] = { nome, descricao, preco, imagem };
+            indexQuartoEditando = null;
+        } else {
+            
+            const novoQuarto = { nome, descricao, preco, imagem };
+            quartos.push(novoQuarto);
+        }
+
         localStorage.setItem('quartos', JSON.stringify(quartos));
-    
         formQuarto.reset();
-        exibirQuartos(); 
+        exibirQuartos();
     }
 
     function exibirQuartos() {
@@ -50,14 +66,61 @@ document.addEventListener('DOMContentLoaded', () => {
             quartoItem.classList.add('quarto-item');
             quartoItem.innerHTML = `
                 <h3>${quarto.nome}</h3>
-                <img src="${quarto.imagem}" alt="Imagem do quarto">
+                ${quarto.imagem ? `<img src="${quarto.imagem}" alt="Imagem do quarto">` : ''}
                 <p>${quarto.descricao}</p>
                 <p>Preço: R$ ${quarto.preco}</p>
                 <button onclick="removerQuarto(${index})">Remover</button>
+                <button id="editar-quarto" onclick="editarQuarto(${index})">Editar</button>
             `;
+            quartoItem.setAttribute('data-imagem', quarto.imagem); 
             listaQuartos.appendChild(quartoItem);
         });
     }
+
+    window.editarQuarto = (index) => {
+        const quartos = JSON.parse(localStorage.getItem('quartos')) || [];
+        const quarto = quartos[index];
+
+        indexQuartoEditando = index;
+        document.getElementById('nome-edicao').value = quarto.nome;
+        document.getElementById('descricao-edicao').value = quarto.descricao;
+        document.getElementById('preco-edicao').value = quarto.preco;
+
+        const quartoItem = document.getElementById(`editar-quarto`).parentNode;
+        const imagemExistente = quartoItem.getAttribute('data-imagem');
+
+        telaEdicao.style.display = 'block';
+    }
+
+    formEdicao.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome-edicao').value;
+        const descricao = document.getElementById('descricao-edicao').value;
+        const preco = document.getElementById('preco-edicao').value;
+        const imagemInput = document.getElementById('imagem-edicao');
+        const imagemArquivo = imagemInput.files[0];
+        let imagemBase64 = null;
+
+        if (imagemArquivo) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                imagemBase64 = e.target.result;
+                salvarQuarto(nome, descricao, preco, imagemBase64);
+            }
+            reader.readAsDataURL(imagemArquivo);
+        } else {
+            salvarQuarto(nome, descricao, preco, imagemBase64);
+        }
+
+        telaEdicao.style.display = 'none';
+        formEdicao.reset();
+    });
+
+    cancelarEdicao.addEventListener('click', () => {
+        telaEdicao.style.display = 'none';
+        formEdicao.reset();
+    });
 
     window.removerQuarto = (index) => {
         const quartos = JSON.parse(localStorage.getItem('quartos')) || [];

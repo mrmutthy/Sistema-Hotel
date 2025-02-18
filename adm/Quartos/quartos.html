@@ -21,6 +21,18 @@
             <button type="submit">Adicionar Quarto</button>
         </form>
 
+        <div id="tela-edicao" style="display: none;">
+            <h2 style="color: white;">Editar Quarto</h2>
+            <form id="form-edicao">
+              <input type="text" id="nome-edicao" placeholder="Nome do Quarto">
+              <textarea id="descricao-edicao" placeholder="Descrição do Quarto"></textarea>
+              <input type="number" id="preco-edicao" placeholder="Preço do Quarto">
+              <input type="file" id="imagem-edicao">
+              <button type="submit">Salvar Edição</button>
+              <button type="button" id="cancelar-edicao">Cancelar</button>
+            </form>
+          </div>
+
         <div id="lista-quartos">
             </div>
     </div>
