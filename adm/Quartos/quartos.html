@@ -3,39 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Quartos</title>
+    <title>Gerenciamento de Quartos</title>
     <link rel="stylesheet" href="quartos.css">
 </head>
 <body>
-    <div id="admin-quartos">
+    <section>
         <h2>Gerenciar Quartos</h2>
-
         <form id="form-quarto">
             <input type="text" id="nome-quarto" placeholder="Nome do Quarto">
             <textarea id="descricao-quarto" placeholder="Descrição do Quarto"></textarea>
-            <input type="number" id="preco-quarto" placeholder="Preço do Quarto">
-            <label for="imagem-quarto">Escolha a Imagem</label>
+            <input type="number" id="preco-quarto" placeholder="Preço da Diária">
             <input type="file" id="imagem-quarto" accept="image/*">
-            
-
-            <button type="submit">Adicionar Quarto</button>
+            <label for="imagem-quarto">Escolher Imagem</label>
+            <button type="submit">Salvar</button>
         </form>
+    </section>
 
-        <div id="tela-edicao" style="display: none;">
-            <h2 style="color: white;">Editar Quarto</h2>
-            <form id="form-edicao">
-              <input type="text" id="nome-edicao" placeholder="Nome do Quarto">
-              <textarea id="descricao-edicao" placeholder="Descrição do Quarto"></textarea>
-              <input type="number" id="preco-edicao" placeholder="Preço do Quarto">
-              <input type="file" id="imagem-edicao">
-              <button type="submit">Salvar Edição</button>
-              <button type="button" id="cancelar-edicao">Cancelar</button>
-            </form>
-          </div>
-
-        <div id="lista-quartos">
+    <div id="tela-edicao" style="display: none;">
+        <h2 style="color: white;">Editar Quarto</h2>
+        <form id="form-edicao">
+            <input type="text" id="nome-edicao" placeholder="Nome do Quarto">
+            <textarea id="descricao-edicao" placeholder="Descrição do Quarto"></textarea>
+            <input type="number" id="preco-edicao" placeholder="Preço do Quarto">
+            <input type="file" id="imagem-edicao">
+            <div class="botoes-edicao">
+                <button type="submit">Salvar Edição</button>
+                <button type="button" id="cancelar-edicao">Cancelar</button>
             </div>
+        </form>
     </div>
+
+    <section id="quartos">
+        <h2>Quartos Disponíveis</h2>
+        <div id="quartos-container"></div>
+    </section>
 
     <script src="quartos.js"></script>
 </body>

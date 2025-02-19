@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Fotos</title>
+    <link rel="stylesheet" href="fotos.css">
+</head>
+<body>
+    <section>
+        <h2>Gerenciar Fotos</h2>
+        <form id="form-foto">
+            <input type="file" id="imagem-foto" accept="image/*">
+            <label for="imagem-foto">Escolher Foto</label>
+            <button type="submit">Salvar</button>
+        </form>
+    </section>
+
+    <section id="fotos">
+        <h2>Fotos do Hotel</h2>
+        <div id="fotos-container"></div>
+    </section>
+
+    <script src="fotos.js"></script>
+</body>
+</html>

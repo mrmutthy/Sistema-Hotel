@@ -1,0 +1,87 @@
+body {
+    font-family: 'serifadas', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5dc;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#quartos-disponiveis {
+    margin-bottom: 20px;
+}
+
+#lista-quartos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.quarto-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+    text-align: center;
+}
+
+.quarto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.quarto-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #8b4513;
+}
+
+.quarto-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+#form-reserva {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#form-reserva label {
+    font-weight: bold;
+}
+
+#form-reserva input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#form-reserva button {
+    background-color: #8b4513;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#form-reserva button:hover {
+    background-color: #5f2f0d;
+}

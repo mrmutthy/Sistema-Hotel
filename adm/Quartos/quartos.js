@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const formQuarto = document.getElementById('form-quarto');
-    const listaQuartos = document.getElementById('lista-quartos');
+    const listaQuartos = document.getElementById('quartos-container'); 
     const telaEdicao = document.getElementById('tela-edicao');
     const formEdicao = document.getElementById('form-edicao');
     const cancelarEdicao = document.getElementById('cancelar-edicao');
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const quartos = JSON.parse(localStorage.getItem('quartos')) || [];
 
         if (indexQuartoEditando !== null) {
-           
+            
             const quartoEditado = quartos[indexQuartoEditando];
             const imagemExistente = quartoEditado.imagem;
 
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function exibirQuartos() {
         const quartos = JSON.parse(localStorage.getItem('quartos')) || [];
         listaQuartos.innerHTML = '';
-
+    
         quartos.forEach((quarto, index) => {
             const quartoItem = document.createElement('div');
             quartoItem.classList.add('quarto-item');
@@ -69,10 +69,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 ${quarto.imagem ? `<img src="${quarto.imagem}" alt="Imagem do quarto">` : ''}
                 <p>${quarto.descricao}</p>
                 <p>Preço: R$ ${quarto.preco}</p>
-                <button onclick="removerQuarto(${index})">Remover</button>
-                <button id="editar-quarto" onclick="editarQuarto(${index})">Editar</button>
+                <div class="botoes-acao">
+                    <button class="botao-editar" onclick="editarQuarto(${index})">Editar</button>
+                    <button class="botao-remover" onclick="removerQuarto(${index})">Remover</button>
+                </div>
             `;
-            quartoItem.setAttribute('data-imagem', quarto.imagem); 
             listaQuartos.appendChild(quartoItem);
         });
     }
@@ -85,9 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('nome-edicao').value = quarto.nome;
         document.getElementById('descricao-edicao').value = quarto.descricao;
         document.getElementById('preco-edicao').value = quarto.preco;
-
-        const quartoItem = document.getElementById(`editar-quarto`).parentNode;
-        const imagemExistente = quartoItem.getAttribute('data-imagem');
 
         telaEdicao.style.display = 'block';
     }
