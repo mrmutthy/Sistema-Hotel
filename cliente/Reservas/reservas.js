@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             quartoItem.innerHTML = `
                 <h3>${quarto.nome}</h3>
                 <p>${quarto.descricao}</p>
+               <img src="${quarto.imagem}" alt="${quarto.nome}">
                 <p>Preço: R$ ${quarto.preco} /Diária</p>
             `;
             quartoItem.addEventListener('click', () => selecionarQuarto(index));
