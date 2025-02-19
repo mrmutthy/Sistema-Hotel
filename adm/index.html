@@ -1,54 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
-    <title>HOTEL</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>Painel Administrativo</h1>
-        <nav>
-            <a href="Quartos/quartos.html">Fotos</a>
-            <a href="Servicos/servicos.html">Serviços</a>
-            <a href="Quartos/quartos.html">Acomodações</a>
-            <a href="Reservas/reserva.html">Reservas</a>
-            <a href="../cliente/index.html">Vizualizar como Cliente</a>
-        </nav>
-    </header>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Nome de usuário:</label>
+            <input type="text" id="username" name="username" required><br><br>
 
-    <main>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br><br>
 
-        <section id="reservas">
-            <h2>Ver Reservas</h2>
-                <a class="botao-banner" href="Reservas/reserva.html">Clique Aqui</a>
-        </section>
-
-        <section id="fotos">
-            <h2>Fotos do Hotel</h2>
-            <div class="galeria">
-            </div>
-        </section>
-
-        <section id="servicos">
-            <h2>Serviços e Lazer</h2>
-            <div id="servicos-container">
-            </div>
-        </section>
-
-        <section id="quartos">
-            <h2>Acomodações Rústicas e Confortáveis</h2>
-            <div id="lista-quartos">
-            </div>
-        </section>
-
-
-
-    </main>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
-
 </html>
