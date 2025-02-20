@@ -165,7 +165,7 @@ label[for="imagem-quarto"]:hover {
     padding-right: 35px;
     padding-left: 5px;
     padding-bottom: 100px;
-    z-index: 1000; /* Garante que a tela de edição fique acima de tudo */
+    z-index: 1000; 
 }
 
 
@@ -180,7 +180,7 @@ label[for="imagem-quarto"]:hover {
     flex-direction: column;
 }
 
-/* Estilo para o container dos botões */
+
 .quarto-item .botoes-acao {
     display: flex;
     justify-content: space-between;
@@ -188,9 +188,9 @@ label[for="imagem-quarto"]:hover {
     margin-top: 10px;
 }
 
-/* Estilo para o botão de editar */
+
 .botao-editar {
-    background-color: #8b4513; /* Marrom */
+    background-color: #8b4513; 
     color: #fff;
     padding: 8px 12px;
     border: none;
@@ -201,12 +201,12 @@ label[for="imagem-quarto"]:hover {
 }
 
 .botao-editar:hover {
-    background-color: #5a2d0c; /* Marrom mais escuro */
+    background-color: #5a2d0c; 
 }
 
-/* Estilo para o botão de remover */
+
 .botao-remover {
-    background-color: #dc3545; /* Vermelho */
+    background-color: #dc3545; 
     color: #fff;
     padding: 8px 12px;
     border: none;
@@ -217,23 +217,23 @@ label[for="imagem-quarto"]:hover {
 }
 
 .botao-remover:hover {
-    background-color: #c12a36; /* Vermelho mais escuro */
+    background-color: #c12a36; 
 }
 
-/* Estilo para os botões na tela de edição */
+
 #tela-edicao form button {
-    margin: 0 10px; /* Adiciona espaço entre os botões */
+    margin: 0 10px; 
 }
 
 #tela-edicao form {
     display: flex;
     flex-direction: column;
-    gap: 10px; /* Espaço entre os elementos do formulário */
+    gap: 10px; 
 }
 
 #tela-edicao form .botoes-edicao {
     display: flex;
-    justify-content: center; /* Centraliza os botões */
+    justify-content: center; 
 }
 
 @media (max-width: 600px) {

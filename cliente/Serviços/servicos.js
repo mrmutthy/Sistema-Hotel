@@ -1,7 +1,7 @@
 function exibirServicos(container) {
-    const servicos = JSON.parse(localStorage.getItem('servicos')) || []; // Semicolon added
+    const servicos = JSON.parse(localStorage.getItem('servicos')) || []; 
 
-    container.innerHTML = ''; // Limpa os serviços antigos
+    container.innerHTML = ''; 
 
     servicos.forEach((servico, index) => {
         const divServico = document.createElement('div');

@@ -37,7 +37,7 @@ section {
 }
 
 #servicos-container {
-    display: flex; /* Flexbox */
+    display: flex; 
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
@@ -57,9 +57,8 @@ section {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* height: 100%; REMOVE THIS */ /* Remove a altura fixa */
-    flex: 1 0 350px;       /* Mantém a largura mínima e permite crescer */
-    align-items: stretch; /* Stretch items to fill container height */
+    flex: 1 0 350px;       
+    align-items: stretch; 
 }
 
 .servico:hover {

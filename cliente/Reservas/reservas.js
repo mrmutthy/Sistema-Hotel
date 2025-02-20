@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let quartoSelecionado = null;
 
-    // Carrega a lista de quartos do localStorage
+   
     const quartos = JSON.parse(localStorage.getItem('quartos')) || [];
 
-    // Exibe os quartos disponíveis
+   
     function exibirQuartos() {
         listaQuartos.innerHTML = '';
         quartos.forEach((quarto, index) => {
@@ -25,14 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Seleciona um quarto
+    
     function selecionarQuarto(index) {
         quartoSelecionado = quartos[index];
         nomeQuartoSelecionado.textContent = quartoSelecionado.nome;
-        formReserva.style.display = 'block'; // Mostra o formulário de reserva
+        formReserva.style.display = 'block'; 
     }
 
-    // Formulário de reserva
+    
     formReserva.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -41,21 +41,21 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Captura os dados do formulário
+       
         const nomeCliente = document.getElementById('nome-cliente').value;
         const dataEntrada = document.getElementById('data-entrada').value;
         const dataSaida = document.getElementById('data-saida').value;
 
-        // Valida as datas
+       
         if (new Date(dataSaida) <= new Date(dataEntrada)) {
             alert('A data de saída deve ser posterior à data de entrada.');
             return;
         }
 
-        // Calcula o preço total da reserva
+        
         const precoTotal = calcularPrecoTotal(quartoSelecionado.preco, dataEntrada, dataSaida);
 
-        // Cria o objeto de reserva
+        
         const reserva = {
             quartoIndex: quartos.indexOf(quartoSelecionado),
             nomeCliente,
@@ -64,29 +64,29 @@ document.addEventListener('DOMContentLoaded', () => {
             precoTotal
         };
 
-        // Salva a reserva no localStorage
+        
         salvarReserva(reserva);
 
-        // Feedback para o usuário
+        
         alert('Reserva realizada com sucesso!');
-        window.location.href = '../pgprincipal.html'; // Redireciona para a página principal
+        window.location.href = '../pgprincipal.html';
     });
 
-    // Função para calcular o preço total da reserva
+    
     function calcularPrecoTotal(precoDiaria, dataEntrada, dataSaida) {
         const diffTime = Math.abs(new Date(dataSaida) - new Date(dataEntrada));
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // Diferença em dias
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
         return precoDiaria * diffDays;
     }
 
-    // Função para salvar a reserva no localStorage
+    
     function salvarReserva(reserva) {
         const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
         reservas.push(reserva);
         localStorage.setItem('reservas', JSON.stringify(reservas));
-        window.localStorage.setItem('atualizarReservas', 'true'); // Sinaliza para o admin atualizar a lista
+        window.localStorage.setItem('atualizarReservas', 'true'); 
     }
 
-    // Exibe os quartos ao carregar a página
+    
     exibirQuartos();
 });
